@@ -1,5 +1,4 @@
 var DB = (function DB() {
-   console.log("test 2");
    var service = {
       Conn: Conn
    };
