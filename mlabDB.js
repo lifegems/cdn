@@ -1,3 +1,23 @@
+/**
+ * # USAGE
+ * 
+ * // establish a connection
+ * var conn = new DB.Conn(
+ *    "https://my.api.baseurl.com",
+ *    "APIKEY"
+ * );
+ * 
+ * // run a GET request
+ * conn.get("CollectionName").then(function(d) {
+ *    alert(d);
+ * });
+ * 
+ * // run a POST request
+ * conn.post("CollectionName", {"_id": "01", "name": "My Test"}).then(function(d) {
+ *    alert("Success!");
+ * });
+ */
+
 var DB = (function DB() {
    var service = {
       Conn: Conn
