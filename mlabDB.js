@@ -8,7 +8,9 @@ var DB = (function DB() {
 
    function Conn(strBaseURL, strAPIKey) {
       var ConnService = {
-         get: get
+         get: get,
+         post: post,
+         removeItem: removeItem
       };
       
       self.strBaseURL = strBaseURL;
@@ -31,6 +33,16 @@ var DB = (function DB() {
             type: "POST",
             contentType: "application/json"
          });
+      }
+      
+      function removeItem(strURI, query) {
+         var fullurl = self.strBaseURL + strURI + "?apiKey=" + self.strAPIKey + "&q=" + query;
+         return $.ajax({
+            url: fullurl,
+            data: JSON.stringify([]),
+            type: "PUT",
+            contentType: "application/json"
+         })
       }
       
       return ConnService;
