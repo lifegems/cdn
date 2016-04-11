@@ -23,6 +23,16 @@ var DB = (function DB() {
          });
       }
       
+      function post(strURI, data) {
+         var fullurl = self.strBaseURL + strURI + "?apiKey=" + self.strAPIKey;
+         return $.ajax({
+            url: fullurl,
+            data: JSON.stringify(data),
+            type: "POST",
+            contentType: "application/json"
+         });
+      }
+      
       return ConnService;
    };
 
