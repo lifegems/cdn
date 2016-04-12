@@ -28,7 +28,7 @@ var DB = (function() {
       });
    }
 
-   DB.prototype.removeItem(strURI, query) {
+   DB.prototype.removeItem = function(strURI, query) {
       var fullurl = self.strBaseURL + strURI + "?apiKey=" + self.strAPIKey + "&q=" + query;
       return $.ajax({
          url: fullurl,
